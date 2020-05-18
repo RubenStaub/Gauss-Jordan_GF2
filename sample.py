@@ -110,7 +110,7 @@ if __name__ == '__main__':
 	FG0 = full_FG[-4:, 14:]
 	
 	# Backward Gaussian elimination
-	M_aug = BG(FG0, col=3)
+	M_aug = BG(FG0)
 	
 	# Augmented only
 	M = M_aug[:, 4:]
