@@ -34,10 +34,10 @@ def FG_partial_pivot(A):
 		A_row_ech (boolean array): A in row echelon form.
 	"""
 	# Convert to boolean
-	full_A = np.array(A, dtype=bool)
+	A_row_ech = np.array(A, dtype=bool)
 	
 	# Apply recursion until submatrix is empty or has single row
-	sub_A = A_row_ech = full_A
+	sub_A = A_row_ech
 	while sub_A.size > 0 and sub_A.shape[0] > 1:
 		# Partial pivoting (i.e. rows only)
 		pivot_success = row_pivoting(sub_A)
