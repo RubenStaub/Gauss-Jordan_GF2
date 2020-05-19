@@ -9,8 +9,9 @@ Two main functions are defined:
 ## Served with example 🥗
 Fresh example from:
 > A New (k, n)-Threshold Secret Sharing Scheme and Its Extension.
-> By _Jun Kurihara_, _Shinsaku Kiyomoto_, _Kazuhide Fukushima_, and _Toshiaki Tanaka_
-https://eprint.iacr.org/2008/409.pdf
+> By _Jun Kurihara_, _Shinsaku Kiyomoto_, _Kazuhide Fukushima_, and _Toshiaki Tanaka_  
+> https://eprint.iacr.org/2008/409.pdf  
+> See section 3.2 of the paper
 
 ## Designed for speed 🗲🚀🗲
 With full Numpy support, this implementation is blazingly fast! Can you keep up? 🏃
