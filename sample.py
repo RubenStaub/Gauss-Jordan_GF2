@@ -37,7 +37,7 @@ def FG_partial_pivot(A):
 	full_A = np.array(A, dtype=bool)
 	
 	# Apply recursion until submatrix is empty or has single row
-	sub_A = A_row_ech
+	sub_A = A_row_ech = full_A
 	while sub_A.size > 0 and sub_A.shape[0] > 1:
 		# Partial pivoting (i.e. rows only)
 		pivot_success = row_pivoting(sub_A)
@@ -102,17 +102,41 @@ if __name__ == '__main__':
 	
 	# Augmented matrix
 	G_aug = np.hstack((G, np.eye(16, dtype=bool)))
+
+	# Display
+	print("Matrix G (augmented):")
+	print(np.array(G_aug, dtype=int))
+	print()
 	
 	# Forward Gaussian elimination
 	full_FG = FG_partial_pivot(G_aug)
+
+	# Display
+	print("Forward elimination of the previous matrix:")
+	print(np.array(full_FG, dtype=int))
+	print()
 	
 	# Keep last rows
 	FG0 = full_FG[-4:, 14:]
+
+	# Display
+	print("Lower right submatrix of the previous:")
+	print(np.array(FG0, dtype=int))
+	print()
 	
 	# Backward Gaussian elimination
 	M_aug = BG(FG0)
+
+	# Display
+	print("Backward elimination of the previous matrix:")
+	print(np.array(M_aug, dtype=int))
+	print()
 	
 	# Augmented only
 	M = M_aug[:, 4:]
 
+	# Display
+	print("Matrix M mentioned in the paper:")
+	print(np.array(M, dtype=int))
+	print()
 
